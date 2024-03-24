@@ -19,6 +19,9 @@
 		26D2B4D42BAE81AC0088F0FD /* Man.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2B4D32BAE81AC0088F0FD /* Man.swift */; };
 		26D2B4D62BAE87D80088F0FD /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2B4D52BAE87D80088F0FD /* Team.swift */; };
 		26D2B4D82BAE8CFE0088F0FD /* Leader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2B4D72BAE8CFE0088F0FD /* Leader.swift */; };
+		26D2B4DC2BB005030088F0FD /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2B4DB2BB005030088F0FD /* DataController.swift */; };
+		26D2B4DE2BB005C90088F0FD /* DataControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2B4DD2BB005C90088F0FD /* DataControllerTests.swift */; };
+		26D2B4E22BB0DF1A0088F0FD /* DefaultData.json in Resources */ = {isa = PBXBuildFile; fileRef = 26D2B4E12BB0DF1A0088F0FD /* DefaultData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,10 @@
 		26D2B4D52BAE87D80088F0FD /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		26D2B4D72BAE8CFE0088F0FD /* Leader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leader.swift; sourceTree = "<group>"; };
 		26D2B4D92BAFED880088F0FD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		26D2B4DB2BB005030088F0FD /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataController.swift; path = ChainOfCommandArmyBuilder/Controllers/DataController.swift; sourceTree = SOURCE_ROOT; };
+		26D2B4DD2BB005C90088F0FD /* DataControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataControllerTests.swift; sourceTree = "<group>"; };
+		26D2B4DF2BB0DC880088F0FD /* UseCases.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = UseCases.md; sourceTree = "<group>"; };
+		26D2B4E12BB0DF1A0088F0FD /* DefaultData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DefaultData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,13 +102,14 @@
 		2629000A2BAE687A00E3E6EC /* ChainOfCommandArmyBuilder */ = {
 			isa = PBXGroup;
 			children = (
+				26D2B4E02BB0DED50088F0FD /* SuppoortingFiles */,
 				26D2B4CE2BAE73B80088F0FD /* Controllers */,
 				26D2B4CD2BAE73A90088F0FD /* Views */,
 				26D2B4CC2BAE739D0088F0FD /* Models */,
 				2629000B2BAE687A00E3E6EC /* ChainOfCommandArmyBuilderApp.swift */,
-				2629000F2BAE687B00E3E6EC /* Assets.xcassets */,
 				262900112BAE687B00E3E6EC /* Preview Content */,
 				26D2B4D92BAFED880088F0FD /* README.md */,
+				26D2B4DF2BB0DC880088F0FD /* UseCases.md */,
 			);
 			path = ChainOfCommandArmyBuilder;
 			sourceTree = "<group>";
@@ -118,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				2629001C2BAE687B00E3E6EC /* ChainOfCommandArmyBuilderTests.swift */,
+				26D2B4DD2BB005C90088F0FD /* DataControllerTests.swift */,
 			);
 			path = ChainOfCommandArmyBuilderTests;
 			sourceTree = "<group>";
@@ -164,8 +173,18 @@
 		26D2B4CE2BAE73B80088F0FD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				26D2B4DB2BB005030088F0FD /* DataController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		26D2B4E02BB0DED50088F0FD /* SuppoortingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				2629000F2BAE687B00E3E6EC /* Assets.xcassets */,
+				26D2B4E12BB0DF1A0088F0FD /* DefaultData.json */,
+			);
+			path = SuppoortingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +291,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26D2B4E22BB0DF1A0088F0FD /* DefaultData.json in Resources */,
 				262900132BAE687B00E3E6EC /* Preview Assets.xcassets in Resources */,
 				262900102BAE687B00E3E6EC /* Assets.xcassets in Resources */,
 			);
@@ -303,6 +323,7 @@
 				26D2B4D22BAE816C0088F0FD /* Squad.swift in Sources */,
 				2629000E2BAE687A00E3E6EC /* ContentView.swift in Sources */,
 				26D2B4D02BAE73E30088F0FD /* Platoon.swift in Sources */,
+				26D2B4DC2BB005030088F0FD /* DataController.swift in Sources */,
 				26D2B4D82BAE8CFE0088F0FD /* Leader.swift in Sources */,
 				2629000C2BAE687A00E3E6EC /* ChainOfCommandArmyBuilderApp.swift in Sources */,
 			);
@@ -313,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2629001D2BAE687B00E3E6EC /* ChainOfCommandArmyBuilderTests.swift in Sources */,
+				26D2B4DE2BB005C90088F0FD /* DataControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
