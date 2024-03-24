@@ -54,6 +54,7 @@
 		26D2B4D32BAE81AC0088F0FD /* Man.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Man.swift; sourceTree = "<group>"; };
 		26D2B4D52BAE87D80088F0FD /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		26D2B4D72BAE8CFE0088F0FD /* Leader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leader.swift; sourceTree = "<group>"; };
+		26D2B4D92BAFED880088F0FD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +101,7 @@
 				2629000B2BAE687A00E3E6EC /* ChainOfCommandArmyBuilderApp.swift */,
 				2629000F2BAE687B00E3E6EC /* Assets.xcassets */,
 				262900112BAE687B00E3E6EC /* Preview Content */,
+				26D2B4D92BAFED880088F0FD /* README.md */,
 			);
 			path = ChainOfCommandArmyBuilder;
 			sourceTree = "<group>";
