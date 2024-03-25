@@ -20,17 +20,31 @@ final class DataControllerTests: XCTestCase {
         sut = nil
     }
 
-    func testDataControllerLoad_whereNoFileExists_shouldReturnError() throws {
+    func testLoad_whereNoFileExists_shouldReturnDataMissingError() throws {
         // Arrange
         // Act
         let natResult = sut?.loadNationalities(fileName: "NotReallyAFile")
 
+        // Assert
         guard case .failure(let error) = natResult else {
             XCTFail("Expected Error, got value instead")
             return
         }
 
+        XCTAssertEqual(error as? DataError, DataError.dataMissingError)
+    }
+
+    func testLoad_whereDataExistsButEmpty_shouldReturnDataMissingError() throws {
+        // Arrange
+        // Act
+        let natResult = sut?.loadNationalities(fileName: "EmptyData")
+
         // Assert
+        guard case .failure(let error) = natResult else {
+            XCTFail("Expected Error, got value instead")
+            return
+        }
+
         XCTAssertEqual(error as? DataError, DataError.dataMissingError)
     }
 }
