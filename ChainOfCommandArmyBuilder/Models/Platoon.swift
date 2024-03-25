@@ -6,7 +6,7 @@
 //
 
 import Foundation
-enum Training: Codable {
+enum Training: String, Codable {
     case green, regular, elite
 }
 

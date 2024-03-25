@@ -12,7 +12,6 @@ final class DataControllerTests: XCTestCase {
     var sut: DataControllerProtocol?
 
     override func setUpWithError() throws {
-        // Arrange
         sut = DataController()
     }
 
@@ -48,7 +47,7 @@ final class DataControllerTests: XCTestCase {
         XCTAssertEqual(error as? DataError, DataError.parseError)
     }
 
-    func testLoad_whereDataExistsButInvalid_shouldParseError() throws {
+    func testLoad_whereDataExistsButInvalid_shouldReturnParseError() throws {
         // Arrange
         // Act
         let natResult = sut?.loadNationalities(fileName: "BadData", in: Bundle(for: Self.self))
@@ -62,4 +61,19 @@ final class DataControllerTests: XCTestCase {
         XCTAssertEqual(error as? DataError, DataError.parseError)
     }
 
+    func testLoad_whereValidDataExists_shouldReturnExpectedObjects() throws {
+        // Arrange
+        // Act
+        let natResult = sut?.loadNationalities(fileName: "TestData", in: Bundle(for: Self.self))
+
+        // Assert
+        guard let nationalities = try natResult?.get() else {
+            XCTFail("Expected Data, got error instead")
+            return
+        }
+
+        XCTAssertEqual(nationalities.count, 1)
+        XCTAssertEqual(nationalities.first?.platoons.first?.training, Training.regular)
+        XCTAssertEqual(nationalities.first?.platoons.first?.squads.first?.leader.rating, LeaderRating.junior)
+    }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum SmallArm: Codable {
+enum SmallArm: String, Codable {
     case pistol, rifle, smg, carbine, slr, slCarbine, noneSupport
 }
 

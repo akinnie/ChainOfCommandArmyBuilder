@@ -22,8 +22,8 @@ struct DataController: DataControllerProtocol {
             do {
                 let data = try Data(contentsOf: fileURL)
                 let decoder = JSONDecoder()
-                let nationalities = try decoder.decode([Nationality].self, from: data)
-                return .success(nationalities)
+                let root = try decoder.decode(RootData.self, from: data)
+                return .success(root.nationalities)
             } catch let error {
                 print(error)
                 return .failure(DataError.parseError)

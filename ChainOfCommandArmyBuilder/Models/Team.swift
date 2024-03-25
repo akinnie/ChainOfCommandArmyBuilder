@@ -6,7 +6,7 @@
 //
 
 import Foundation
-enum SupportWeapon: Codable {
+enum SupportWeapon: String, Codable {
     case assaultRifle, lmgBeltFed, lmgCartridge, tripodMG, hmg, atRocket, atRifle
 
     var rof: Int {
