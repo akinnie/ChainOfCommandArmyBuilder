@@ -8,7 +8,7 @@
 import Foundation
 
 enum SmallArm: Codable {
-    case pistol, rifle, smg, carbine, slr, noneSupport
+    case pistol, rifle, smg, carbine, slr, slCarbine, noneSupport
 }
 
 protocol Man: Codable {

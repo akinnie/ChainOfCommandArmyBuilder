@@ -1,0 +1,86 @@
+{
+    "nationalities": [
+        {
+            "name": "unitedStates",
+            "platoons": [
+                {
+                    "name": "infantry",
+                    "rating": 0,
+                    "training": {
+                    },
+                    "squads": [
+                        {
+                            "leader": {
+                                "rating": "juniorLeader",
+                                "weapons": ["slr"]
+                            },
+                            "teams": [
+                                {
+                                    "supportWeapon": "assaultRifle",
+                                    "soldiers": [
+                                        {
+                                            "weapons": "noneSupport"
+                                        },
+                                        {
+                                            "weapons": "noneSupport"
+                                        },
+                                        {
+                                            "weapons": "noneSupport"
+                                        }
+                                    ]
+                                    "leader": null
+                                },{
+                                    "supportWeapon": "assaultRifle",
+                                    "soldiers": [
+                                        {
+                                            "weapons": "slr"
+                                        },
+                                        {
+                                            "weapons": "slr"
+                                        },
+                                        {
+                                            "weapons": "slr"
+                                        },
+                                        {
+                                            "weapons": "slr"
+                                        },
+                                        {
+                                            "weapons": "slr"
+                                        },
+                                        {
+                                            "weapons": "slr"
+                                        }
+                                    ]
+                                    "leader": null
+                                }
+                            ]
+                        }
+                    ],
+                    "hq": {
+                        "commander": {
+                            "rating": "seniorLeader",
+                            "smallArms": ["slCarbine"]
+                        },
+                        "secondInCommand": {
+                            "rating": "seniorLeader",
+                            "smallArms": ["smg"]
+                       },
+                        "soldiers": null,
+                        "supportTeams": [
+                            {
+                                "supportWeapon": "atRocket",
+                                "soldiers": [
+                                    {
+                                        "weapons": "noneSupport"
+                                    },
+                                    {
+                                        "weapons": "noneSupport"
+                                    }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}
