@@ -24,6 +24,8 @@
 		26D2B4E22BB0DF1A0088F0FD /* DefaultData.json in Resources */ = {isa = PBXBuildFile; fileRef = 26D2B4E12BB0DF1A0088F0FD /* DefaultData.json */; };
 		26D2B4E52BB0E1BA0088F0FD /* TestData.json in Resources */ = {isa = PBXBuildFile; fileRef = 26D2B4E42BB0E1BA0088F0FD /* TestData.json */; };
 		26D2B4E72BB12B740088F0FD /* Nationality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2B4E62BB12B740088F0FD /* Nationality.swift */; };
+		26D2B4EB2BB2315D0088F0FD /* EmptyData.json in Resources */ = {isa = PBXBuildFile; fileRef = 26D2B4EA2BB2315D0088F0FD /* EmptyData.json */; };
+		26D2B4ED2BB2325F0088F0FD /* BadData.json in Resources */ = {isa = PBXBuildFile; fileRef = 26D2B4EC2BB2325F0088F0FD /* BadData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		26D2B4E12BB0DF1A0088F0FD /* DefaultData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DefaultData.json; sourceTree = "<group>"; };
 		26D2B4E42BB0E1BA0088F0FD /* TestData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TestData.json; sourceTree = "<group>"; };
 		26D2B4E62BB12B740088F0FD /* Nationality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nationality.swift; sourceTree = "<group>"; };
+		26D2B4EA2BB2315D0088F0FD /* EmptyData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EmptyData.json; sourceTree = "<group>"; };
+		26D2B4EC2BB2325F0088F0FD /* BadData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BadData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,8 @@
 				2629001C2BAE687B00E3E6EC /* ChainOfCommandArmyBuilderTests.swift */,
 				26D2B4DD2BB005C90088F0FD /* DataControllerTests.swift */,
 				26D2B4E42BB0E1BA0088F0FD /* TestData.json */,
+				26D2B4EA2BB2315D0088F0FD /* EmptyData.json */,
+				26D2B4EC2BB2325F0088F0FD /* BadData.json */,
 			);
 			path = ChainOfCommandArmyBuilderTests;
 			sourceTree = "<group>";
@@ -308,6 +314,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				26D2B4E52BB0E1BA0088F0FD /* TestData.json in Resources */,
+				26D2B4ED2BB2325F0088F0FD /* BadData.json in Resources */,
+				26D2B4EB2BB2315D0088F0FD /* EmptyData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

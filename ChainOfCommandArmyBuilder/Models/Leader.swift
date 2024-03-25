@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum LeaderRating: Codable {
+enum LeaderRating: String, Codable {
     case junior, superiorJunior, inferiorSenior, senior, superiorSenior
 
     var initiativePoints: Int {

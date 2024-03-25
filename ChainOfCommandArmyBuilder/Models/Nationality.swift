@@ -7,6 +7,10 @@
 
 import Foundation
 
+struct RootData: Codable {
+    let nationalities: [Nationality]
+}
+
 struct Nationality: Codable {
     let name: String
     let platoons: [Platoon]

@@ -25,7 +25,7 @@ Unhappy Path (empty data):
 1. System finds the file
 2. System parses the file
 3. System finds no valid data objects
-4. System displays an error to the user indicating that the data is empty (same error as missing data path)
+4. System displays an error to the user indicating that the data is not valid (same error as bad data)
 
 ### Display Data/UI
 

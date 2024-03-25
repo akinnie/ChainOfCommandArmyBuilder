@@ -6,12 +6,11 @@
                 {
                     "name": "infantry",
                     "rating": 0,
-                    "training": {
-                    },
+                    "training": "regular",
                     "squads": [
                         {
                             "leader": {
-                                "rating": "juniorLeader",
+                                "rating": "junior",
                                 "weapons": ["slr"]
                             },
                             "teams": [
@@ -19,63 +18,61 @@
                                     "supportWeapon": "assaultRifle",
                                     "soldiers": [
                                         {
-                                            "weapons": "noneSupport"
+                                            "weapons": ["noneSupport"]
                                         },
                                         {
-                                            "weapons": "noneSupport"
+                                            "weapons": ["noneSupport"]
                                         },
                                         {
-                                            "weapons": "noneSupport"
+                                            "weapons": ["noneSupport"]
                                         }
                                     ]
-                                    "leader": null
                                 },{
                                     "supportWeapon": "assaultRifle",
                                     "soldiers": [
                                         {
-                                            "weapons": "slr"
+                                            "weapons": ["slr"]
                                         },
                                         {
-                                            "weapons": "slr"
+                                            "weapons": ["slr"]
                                         },
                                         {
-                                            "weapons": "slr"
+                                            "weapons": ["slr"]
                                         },
                                         {
-                                            "weapons": "slr"
+                                            "weapons": ["slr"]
                                         },
                                         {
-                                            "weapons": "slr"
+                                            "weapons": ["slr"]
                                         },
                                         {
-                                            "weapons": "slr"
+                                            "weapons": ["slr"]
                                         }
                                     ]
-                                    "leader": null
                                 }
                             ]
                         }
                     ],
                     "hq": {
                         "commander": {
-                            "rating": "seniorLeader",
-                            "smallArms": ["slCarbine"]
+                            "rating": "senior",
+                            "weapons": ["slCarbine"]
                         },
                         "secondInCommand": {
-                            "rating": "seniorLeader",
-                            "smallArms": ["smg"]
+                            "rating": "senior",
+                            "weapons": ["smg"]
                        },
-                        "soldiers": null,
                         "supportTeams": [
                             {
                                 "supportWeapon": "atRocket",
                                 "soldiers": [
                                     {
-                                        "weapons": "noneSupport"
+                                        "weapons": ["noneSupport"]
                                     },
                                     {
-                                        "weapons": "noneSupport"
+                                        "weapons": ["noneSupport"]
                                     }
+                                ]
                             }
                         ]
                     }
