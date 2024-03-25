@@ -23,7 +23,7 @@ final class DataControllerTests: XCTestCase {
     func testLoad_whereNoFileExists_shouldReturnDataMissingError() throws {
         // Arrange
         // Act
-        let natResult = sut?.loadNationalities(fileName: "NotReallyAFile")
+        let natResult = sut?.loadNationalities(fileName: "NotReallyAFile", in: Bundle(for: Self.self))
 
         // Assert
         guard case .failure(let error) = natResult else {
@@ -34,10 +34,10 @@ final class DataControllerTests: XCTestCase {
         XCTAssertEqual(error as? DataError, DataError.dataMissingError)
     }
 
-    func testLoad_whereDataExistsButEmpty_shouldReturnDataMissingError() throws {
+    func testLoad_whereDataExistsButEmpty_shouldReturnParseError() throws {
         // Arrange
         // Act
-        let natResult = sut?.loadNationalities(fileName: "EmptyData")
+        let natResult = sut?.loadNationalities(fileName: "EmptyData", in: Bundle(for: Self.self))
 
         // Assert
         guard case .failure(let error) = natResult else {
@@ -45,6 +45,21 @@ final class DataControllerTests: XCTestCase {
             return
         }
 
-        XCTAssertEqual(error as? DataError, DataError.dataMissingError)
+        XCTAssertEqual(error as? DataError, DataError.parseError)
     }
+
+    func testLoad_whereDataExistsButInvalid_shouldParseError() throws {
+        // Arrange
+        // Act
+        let natResult = sut?.loadNationalities(fileName: "BadData", in: Bundle(for: Self.self))
+
+        // Assert
+        guard case .failure(let error) = natResult else {
+            XCTFail("Expected Error, got value instead")
+            return
+        }
+
+        XCTAssertEqual(error as? DataError, DataError.parseError)
+    }
+
 }

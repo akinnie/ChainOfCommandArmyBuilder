@@ -12,13 +12,13 @@ enum DataError: Error {
 }
 
 protocol DataControllerProtocol {
-    func loadNationalities(fileName: String) -> Result<[Nationality], Error>
+    func loadNationalities(fileName: String, in bundle: Bundle) -> Result<[Nationality], Error>
 }
 
 struct DataController: DataControllerProtocol {
     static let shared = DataController()
-    func loadNationalities(fileName: String = "DefaultData") -> Result<[Nationality], Error> {
-        if let fileURL = Bundle.main.url(forResource: fileName, withExtension: "json") {
+    func loadNationalities(fileName: String = "DefaultData", in bundle: Bundle = Bundle.main) -> Result<[Nationality], Error> {
+        if let fileURL = bundle.url(forResource: fileName, withExtension: "json") {
             do {
                 let data = try Data(contentsOf: fileURL)
                 let decoder = JSONDecoder()
