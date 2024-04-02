@@ -1,30 +1,29 @@
 //
-//  ContentView.swift
+//  PlatoonChooser.swift
 //  ChainOfCommandArmyBuilder
 //
-//  Created by Andrew Kinnie on 3/23/24.
+//  Created by Andrew Kinnie on 3/26/24.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct PlatoonChooser: View {
     @State var selectedNationality: Nationality?
-    @ObservedObject var viewModel: SelectionViewModel
+    @State var selectedPlatoonType: Platoon?
+    @Binding var nationalities: [Nationality]
     
     var body: some View {
-        VStack {
-            Text("Chain of Command Army Builder")
-                .font(.title2)
-                .padding()
-            Text("Nationality:")
-            Picker("Choose a Nationality", selection: $selectedNationality) {
-                ForEach(viewModel.nationalities, id: \.self) {
-                    Text($0.name)
+        NavigationStack {
+            Form {
+                Section {
+                    Picker(selectedNationality?.name ?? "Please Select", selection: $selectedNationality) {
+                        ForEach(nationalities, id: \.self) {
+                            Text($0.name)
+                        }
+                    }
                 }
             }
-
-            Text("You selected \(selectedNationality?.name ?? "no selection")")
-            Spacer()
+            .navigationTitle("Select Nationality")
         }
     }
 }
@@ -50,7 +49,7 @@ struct ContentView: View {
         }
         
         var body: some View {
-            ContentView(viewModel: SelectionViewModel(nationalities: nationalities))
+            PlatoonChooser(nationalities: $nationalities)
         }
     }
     

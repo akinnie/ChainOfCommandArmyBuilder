@@ -1,0 +1,345 @@
+{
+    "nationalities": [
+        {
+            "name": "United States",
+            "platoons": [
+                {
+                    "name": "Rifle",
+                    "rating": 0,
+                    "training": "regular",
+                    "squads": [
+                        {
+                            "leader": {
+                                "rating": "junior",
+                                "weapons": ["smg"]
+                            },
+                            "teams": [
+                                {
+                                    "supportWeapon": "assaultRifle",
+                                    "soldiers": [
+                                        {
+                                            "weapons": ["noneSupport"]
+                                        },
+                                        {
+                                            "weapons": ["noneSupport"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        }
+                                    ]
+                                },{
+                                    "soldiers": [
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "leader": {
+                                "rating": "junior",
+                                "weapons": ["smg"]
+                            },
+                            "teams": [
+                                {
+                                    "supportWeapon": "assaultRifle",
+                                    "soldiers": [
+                                        {
+                                            "weapons": ["noneSupport"]
+                                        },
+                                        {
+                                            "weapons": ["noneSupport"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        }
+                                    ]
+                                },{
+                                    "soldiers": [
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "leader": {
+                                "rating": "junior",
+                                "weapons": ["smg"]
+                            },
+                            "teams": [
+                                {
+                                    "supportWeapon": "assaultRifle",
+                                    "soldiers": [
+                                        {
+                                            "weapons": ["noneSupport"]
+                                        },
+                                        {
+                                            "weapons": ["noneSupport"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        }
+                                    ]
+                                },{
+                                    "soldiers": [
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "hq": {
+                        "commander": {
+                            "rating": "senior",
+                            "weapons": ["slCarbine"]
+                        },
+                        "secondInCommand": {
+                            "rating": "senior",
+                            "weapons": ["smg"]
+                       },
+                        "supportTeams": [
+                            {
+                                "supportWeapon": "atRocket",
+                                "soldiers": [
+                                    {
+                                        "weapons": ["noneSupport"]
+                                    },
+                                    {
+                                        "weapons": ["noneSupport"]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "Armored Rifle",
+                    "rating": 0,
+                    "training": "regular",
+                    "squads": [
+                        {
+                            "leader": {
+                                "rating": "junior",
+                                "weapons": ["slr"]
+                            },
+                            "teams": [
+                                {
+                                    "soldiers": [
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "leader": {
+                                "rating": "junior",
+                                "weapons": ["slr"]
+                            },
+                            "teams": [
+                                {
+                                    "soldiers": [
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "leader": {
+                                "rating": "junior",
+                                "weapons": ["slr"]
+                            },
+                            "teams": [
+                                {
+                                    "soldiers": [
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        },
+                                        {
+                                            "weapons": ["slr"]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "hq": {
+                        "commander": {
+                            "rating": "senior",
+                            "weapons": ["slCarbine"]
+                        },
+                        "secondInCommand": {
+                            "rating": "senior",
+                            "weapons": ["slCarbine"]
+                       },
+                        "supportTeams": [
+                            {
+                                "supportWeapon": "mortar60",
+                                "soldiers": [
+                                    {
+                                        "weapons": ["noneSupport"]
+                                    },
+                                    {
+                                        "weapons": ["noneSupport"]
+                                    }
+                                ]
+                            },
+                            {
+                                "supportWeapon": "atRocket",
+                                "soldiers": [
+                                    {
+                                        "weapons": ["noneSupport"]
+                                    },
+                                    {
+                                        "weapons": ["noneSupport"]
+                                    }
+                                ]
+                            }
+
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}
