@@ -17,6 +17,10 @@ protocol DataControllerProtocol {
 
 struct DataController: DataControllerProtocol {
     static let shared = DataController()
+    var nationalities: [Nationality] = []
+    
+    init() {}
+
     func loadNationalities(fileName: String = "DefaultData", in bundle: Bundle = Bundle.main) -> Result<[Nationality], Error> {
         if let fileURL = bundle.url(forResource: fileName, withExtension: "json") {
             do {

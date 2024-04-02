@@ -26,6 +26,8 @@
 		26D2B4E72BB12B740088F0FD /* Nationality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2B4E62BB12B740088F0FD /* Nationality.swift */; };
 		26D2B4EB2BB2315D0088F0FD /* EmptyData.json in Resources */ = {isa = PBXBuildFile; fileRef = 26D2B4EA2BB2315D0088F0FD /* EmptyData.json */; };
 		26D2B4ED2BB2325F0088F0FD /* BadData.json in Resources */ = {isa = PBXBuildFile; fileRef = 26D2B4EC2BB2325F0088F0FD /* BadData.json */; };
+		26D2B4EF2BB295E10088F0FD /* PlatoonChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2B4EE2BB295E10088F0FD /* PlatoonChooser.swift */; };
+		26D9836C2BBA310600894F30 /* SelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D9836B2BBA310600894F30 /* SelectionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		26D2B4E62BB12B740088F0FD /* Nationality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nationality.swift; sourceTree = "<group>"; };
 		26D2B4EA2BB2315D0088F0FD /* EmptyData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EmptyData.json; sourceTree = "<group>"; };
 		26D2B4EC2BB2325F0088F0FD /* BadData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BadData.json; sourceTree = "<group>"; };
+		26D2B4EE2BB295E10088F0FD /* PlatoonChooser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatoonChooser.swift; sourceTree = "<group>"; };
+		26D9836B2BBA310600894F30 /* SelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				2629000D2BAE687A00E3E6EC /* ContentView.swift */,
+				26D2B4EE2BB295E10088F0FD /* PlatoonChooser.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				26D2B4DB2BB005030088F0FD /* DataController.swift */,
+				26D9836B2BBA310600894F30 /* SelectionViewModel.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -338,8 +344,10 @@
 				26D2B4D22BAE816C0088F0FD /* Squad.swift in Sources */,
 				2629000E2BAE687A00E3E6EC /* ContentView.swift in Sources */,
 				26D2B4E72BB12B740088F0FD /* Nationality.swift in Sources */,
+				26D9836C2BBA310600894F30 /* SelectionViewModel.swift in Sources */,
 				26D2B4D02BAE73E30088F0FD /* Platoon.swift in Sources */,
 				26D2B4DC2BB005030088F0FD /* DataController.swift in Sources */,
+				26D2B4EF2BB295E10088F0FD /* PlatoonChooser.swift in Sources */,
 				26D2B4D82BAE8CFE0088F0FD /* Leader.swift in Sources */,
 				2629000C2BAE687A00E3E6EC /* ChainOfCommandArmyBuilderApp.swift in Sources */,
 			);
