@@ -9,7 +9,9 @@ import Foundation
 
 class SelectionViewModel: ObservableObject {
 
-    @Published var nationalities: [Nationality]
+    var nationalities: [Nationality]
+    @Published var selectedNationality: Nationality?
+    @Published var selectedPlatoon: Platoon?
 
     init(nationalities: [Nationality] = []) {
         self.nationalities = nationalities
