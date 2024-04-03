@@ -8,22 +8,33 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var selectedNationality: Nationality?
     @ObservedObject var viewModel: SelectionViewModel
-    
+
+    let noSelectionPrompt = "Please Select"
+
+    init?(viewModel: SelectionViewModel, selectedNationality: Binding<Nationality?>? = nil) {
+        self.viewModel = viewModel
+    }
+
     var body: some View {
         VStack {
             Text("Chain of Command Army Builder")
                 .font(.title2)
                 .padding()
             Text("Nationality:")
-            Picker("Choose a Nationality", selection: $selectedNationality) {
+            Picker("Choose a Nationality", selection: $viewModel.selectedNationality) {
+                if viewModel.selectedNationality == nil {
+                    Text(noSelectionPrompt).tag(Optional<Nationality>.none)
+                }
+
                 ForEach(viewModel.nationalities, id: \.self) {
-                    Text($0.name)
+                    Text($0.name).tag(Optional($0))
                 }
             }
 
-            Text("You selected \(selectedNationality?.name ?? "no selection")")
+            if let selectedNationality = viewModel.selectedNationality {
+                Text("You selected \(selectedNationality.name)")
+            }
             Spacer()
         }
     }
@@ -31,8 +42,7 @@ struct ContentView: View {
 
 #Preview {
     struct NationalityBindingContainer: View {
-        @State
-        private var nationalities: [Nationality]
+        var nationalities: [Nationality]
         
         init() {
             let leader = Leader(rating: .senior, weapons: [.carbine])
@@ -50,7 +60,7 @@ struct ContentView: View {
         }
         
         var body: some View {
-            ContentView(viewModel: SelectionViewModel(nationalities: nationalities))
+            ContentView(viewModel: SelectionViewModel())
         }
     }
     

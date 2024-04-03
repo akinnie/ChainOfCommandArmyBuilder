@@ -1,6 +1,10 @@
 {
     "nationalities": [
         {
+            "name": "Canada",
+            "platoons": []
+        },
+        {
             "name": "United States",
             "platoons": [
                 {
