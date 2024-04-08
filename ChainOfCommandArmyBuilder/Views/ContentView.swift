@@ -17,15 +17,15 @@ struct ContentView: View {
                 .padding()
             Text("Nationality:")
             Picker("Choose a Nationality", selection: $viewModel.selectedNationality) {
-                if viewModel.selectedNationality == nil {
-                    Text("Please Select")
-                }
-                ForEach(viewModel.nationalities, id: \.self) {
-                    Text($0.name)
+                Text("Please Select")
+                ForEach(viewModel.nationalities, id: \.self) { nationality in
+                    Text(nationality.name).tag(nationality as Nationality?)
                 }
             }
 
-            Text("You selected \(viewModel.selectedNationality?.name ?? "no selection")")
+            if let selectedNationality = viewModel.selectedNationality {
+                PlatoonChooser(selectedNationality: selectedNationality)
+            }
             Spacer()
         }
     }
