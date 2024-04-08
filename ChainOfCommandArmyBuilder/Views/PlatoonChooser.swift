@@ -8,13 +8,25 @@
 import SwiftUI
 
 struct PlatoonChooser: View {
-    @State var selectedNationality: Nationality
-    @State var selectedPlatoonType: Platoon?
+    @StateObject var viewModel: PlatoonChooserViewModel
     
+    init(viewModel: PlatoonChooserViewModel) {
+        self._viewModel = StateObject(wrappedValue: viewModel)
+    }
+
     var body: some View {
-        Picker("Please Select", selection: $selectedPlatoonType) {
-            ForEach(selectedNationality.platoons, id: \.self) { platoon in
-                Text(platoon.name).tag(platoon as Platoon?)
+        NavigationStack {
+            VStack {
+                Picker("Core Platoon", selection: $viewModel.selectedPlatoon) {
+                    Text("Please Select")
+                    ForEach(viewModel.platoons, id: \.self) { platoon in
+                        Text(platoon.name).tag(platoon as Platoon?)
+                    }
+                }
+                .pickerStyle(.navigationLink)
+                .padding(16)
+                
+                Spacer()
             }
         }
     }
@@ -48,7 +60,7 @@ struct PlatoonChooser: View {
         }
 
         var body: some View {
-            PlatoonChooser(selectedNationality: selectedNationality)
+            PlatoonChooser(viewModel: PlatoonChooserViewModel(selectedNationality: selectedNationality))
         }
     }
     

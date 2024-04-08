@@ -8,5 +8,10 @@
 import Foundation
 
 class PlatoonChooserViewModel: ObservableObject {
-    @Published var platoons: [Platoon] = []
+    @Published var selectedPlatoon: Platoon?
+    @Published var platoons: [Platoon]
+
+    init(selectedNationality: Nationality) {
+        self.platoons = selectedNationality.platoons
+    }
 }

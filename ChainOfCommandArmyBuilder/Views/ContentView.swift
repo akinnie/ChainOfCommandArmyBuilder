@@ -9,6 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var viewModel: NationalitiesViewModel
+    
+    init(viewModel: NationalitiesViewModel = NationalitiesViewModel()) {
+        self._viewModel = StateObject(wrappedValue: viewModel)
+    }
 
     var body: some View {
         VStack {
@@ -24,7 +28,7 @@ struct ContentView: View {
             }
 
             if let selectedNationality = viewModel.selectedNationality {
-                PlatoonChooser(selectedNationality: selectedNationality)
+                PlatoonChooser(viewModel: PlatoonChooserViewModel( selectedNationality: selectedNationality))
             }
             Spacer()
         }
