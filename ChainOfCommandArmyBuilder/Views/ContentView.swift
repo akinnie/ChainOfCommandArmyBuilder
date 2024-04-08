@@ -8,12 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var viewModel: SelectionViewModel
-
-    let noSelectionPrompt = "Please Select"
-
-    init?(viewModel: SelectionViewModel, selectedNationality: Binding<Nationality?>? = nil) {
-        self.viewModel = viewModel
+    @StateObject var viewModel: NationalitiesViewModel
+    
+    init(viewModel: NationalitiesViewModel = NationalitiesViewModel()) {
+        self._viewModel = StateObject(wrappedValue: viewModel)
     }
 
     var body: some View {
@@ -23,17 +21,14 @@ struct ContentView: View {
                 .padding()
             Text("Nationality:")
             Picker("Choose a Nationality", selection: $viewModel.selectedNationality) {
-                if viewModel.selectedNationality == nil {
-                    Text(noSelectionPrompt).tag(Optional<Nationality>.none)
-                }
-
-                ForEach(viewModel.nationalities, id: \.self) {
-                    Text($0.name).tag(Optional($0))
+                Text("Please Select")
+                ForEach(viewModel.nationalities, id: \.self) { nationality in
+                    Text(nationality.name).tag(nationality as Nationality?)
                 }
             }
 
             if let selectedNationality = viewModel.selectedNationality {
-                Text("You selected \(selectedNationality.name)")
+                PlatoonChooser(viewModel: PlatoonChooserViewModel( selectedNationality: selectedNationality))
             }
             Spacer()
         }
@@ -42,7 +37,8 @@ struct ContentView: View {
 
 #Preview {
     struct NationalityBindingContainer: View {
-        var nationalities: [Nationality]
+        @State
+        private var nationalities: [Nationality]
         
         init() {
             let leader = Leader(rating: .senior, weapons: [.carbine])
@@ -51,7 +47,7 @@ struct ContentView: View {
             nationalities = [Nationality(
                 name: "Test",
                 platoons: [
-                    Platoon(rating: 0, training: .regular, squads: [
+                    Platoon(name: "Rifle", rating: 0, training: .regular, squads: [
                         Squad(leader: leader1, teams: [Team(supportWeapon: nil, soldiers: [Soldier(weapons: [.rifle])], leader: nil)]),
                         Squad(leader: leader2, teams: [Team(supportWeapon: nil, soldiers: [Soldier(weapons: [.rifle])], leader: nil)])
                     ], hq: Headquarters(commander: leader, secondInCommand: nil, soldiers: nil, supportTeams: nil)
@@ -60,7 +56,7 @@ struct ContentView: View {
         }
         
         var body: some View {
-            ContentView(viewModel: SelectionViewModel())
+            ContentView(viewModel: NationalitiesViewModel(nationalities: nationalities))
         }
     }
     

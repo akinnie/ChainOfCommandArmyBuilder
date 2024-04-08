@@ -41,12 +41,13 @@ struct Platoon: Identifiable, Hashable, Codable {
     static func == (lhs: Platoon, rhs: Platoon) -> Bool {
         lhs.id == rhs.id
     }
-
+    
     // Hashable conformance
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
     
+    let name: String
     var id: UUID = UUID()
     let rating: Int
     let training: Training
@@ -54,7 +55,8 @@ struct Platoon: Identifiable, Hashable, Codable {
     let squads: [Squad]
     let hq: Headquarters
 
-    init(id: UUID = UUID(), rating: Int, training: Training, squads: [Squad], hq: Headquarters) {
+    init(name: String, id: UUID = UUID(), rating: Int, training: Training, squads: [Squad], hq: Headquarters) {
+        self.name = name
         self.id = id
         self.rating = rating
         self.training = training
@@ -65,6 +67,7 @@ struct Platoon: Identifiable, Hashable, Codable {
     init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let decodedId = try container.decodeIfPresent(UUID.self, forKey: .id)
+        self.name = try container.decode(String.self, forKey: .name)
         self.id = decodedId ?? UUID()
         self.rating = try container.decode(Int.self, forKey: .rating)
         self.training = try container.decode(Training.self, forKey: .training)

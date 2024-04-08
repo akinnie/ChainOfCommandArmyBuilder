@@ -11,7 +11,7 @@ import SwiftUI
 struct ChainOfCommandArmyBuilderApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: SelectionViewModel())
+            ContentView(viewModel: NationalitiesViewModel())
         }
     }
 }

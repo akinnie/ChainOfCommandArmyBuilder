@@ -8,50 +8,61 @@
 import SwiftUI
 
 struct PlatoonChooser: View {
-    @State var selectedNationality: Nationality?
-    @State var selectedPlatoonType: Platoon?
-    @Binding var nationalities: [Nationality]
+    @StateObject var viewModel: PlatoonChooserViewModel
     
+    init(viewModel: PlatoonChooserViewModel) {
+        self._viewModel = StateObject(wrappedValue: viewModel)
+    }
+
     var body: some View {
         NavigationStack {
-            Form {
-                Section {
-                    Picker(selectedNationality?.name ?? "Please Select", selection: $selectedNationality) {
-                        ForEach(nationalities, id: \.self) {
-                            Text($0.name)
-                        }
+            VStack {
+                Picker("Core Platoon", selection: $viewModel.selectedPlatoon) {
+                    Text("Please Select")
+                    ForEach(viewModel.platoons, id: \.self) { platoon in
+                        Text(platoon.name).tag(platoon as Platoon?)
                     }
                 }
+                .pickerStyle(.navigationLink)
+                .padding(16)
+                
+                Spacer()
             }
-            .navigationTitle("Select Nationality")
         }
     }
 }
 
 #Preview {
-    struct NationalityBindingContainer: View {
+    struct PlatoonBindingContainer: View {
         @State
-        private var nationalities: [Nationality]
+        private var selectedNationality: Nationality
         
         init() {
             let leader = Leader(rating: .senior, weapons: [.carbine])
             let leader1 = Leader(rating: .junior, weapons: [.rifle])
             let leader2 = Leader(rating: .junior, weapons: [.smg])
-            nationalities = [Nationality(
+            
+            selectedNationality = Nationality(
                 name: "Test",
                 platoons: [
-                    Platoon(rating: 0, training: .regular, squads: [
+                    Platoon(name: "Rifle", rating: 0, training: .regular, squads: [
                         Squad(leader: leader1, teams: [Team(supportWeapon: nil, soldiers: [Soldier(weapons: [.rifle])], leader: nil)]),
                         Squad(leader: leader2, teams: [Team(supportWeapon: nil, soldiers: [Soldier(weapons: [.rifle])], leader: nil)])
                     ], hq: Headquarters(commander: leader, secondInCommand: nil, soldiers: nil, supportTeams: nil)
-                           )
-                ]), Nationality(name: "Some Other", platoons: [])]
+                    ),
+                    Platoon(name: "Armored Rifle", rating: 0, training: .regular, squads: [
+                        Squad(leader: leader1, teams: [Team(supportWeapon: nil, soldiers: [Soldier(weapons: [.rifle])], leader: nil)]),
+                        Squad(leader: leader2, teams: [Team(supportWeapon: nil, soldiers: [Soldier(weapons: [.rifle])], leader: nil)])
+                    ], hq: Headquarters(commander: leader, secondInCommand: nil, soldiers: nil, supportTeams: nil)
+                    )
+                ]
+            )
         }
-        
+
         var body: some View {
-            PlatoonChooser(nationalities: $nationalities)
+            PlatoonChooser(viewModel: PlatoonChooserViewModel(selectedNationality: selectedNationality))
         }
     }
     
-    return NationalityBindingContainer()
+    return PlatoonBindingContainer()
 }
