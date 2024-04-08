@@ -37,7 +37,16 @@ struct Headquarters: Identifiable, Codable {
     }
 }
 
-struct Platoon: Identifiable, Codable {
+struct Platoon: Identifiable, Hashable, Codable {
+    static func == (lhs: Platoon, rhs: Platoon) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    // Hashable conformance
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
     var id: UUID = UUID()
     let rating: Int
     let training: Training

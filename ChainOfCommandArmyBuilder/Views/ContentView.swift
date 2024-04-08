@@ -8,22 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var selectedNationality: Nationality?
-    @ObservedObject var viewModel: SelectionViewModel
+//    @Binding var selectedNationality: Nationality?
     
+    @ObservedObject var viewModel: NationalitiesViewModel
+
     var body: some View {
         VStack {
             Text("Chain of Command Army Builder")
                 .font(.title2)
                 .padding()
             Text("Nationality:")
-            Picker("Choose a Nationality", selection: $selectedNationality) {
+            Picker("Choose a Nationality", selection: $viewModel.selectedNationality) {
                 ForEach(viewModel.nationalities, id: \.self) {
                     Text($0.name)
                 }
             }
 
-            Text("You selected \(selectedNationality?.name ?? "no selection")")
+            Text("You selected \(viewModel.selectedNationality?.name ?? "no selection")")
             Spacer()
         }
     }
@@ -50,7 +51,7 @@ struct ContentView: View {
         }
         
         var body: some View {
-            ContentView(viewModel: SelectionViewModel(nationalities: nationalities))
+            ContentView(viewModel: NationalitiesViewModel(nationalities: nationalities))
         }
     }
     
