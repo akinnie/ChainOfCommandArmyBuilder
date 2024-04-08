@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-//    @Binding var selectedNationality: Nationality?
-    
-    @ObservedObject var viewModel: NationalitiesViewModel
+    @StateObject var viewModel: NationalitiesViewModel
 
     var body: some View {
         VStack {
@@ -19,6 +17,9 @@ struct ContentView: View {
                 .padding()
             Text("Nationality:")
             Picker("Choose a Nationality", selection: $viewModel.selectedNationality) {
+                if viewModel.selectedNationality == nil {
+                    Text("Please Select")
+                }
                 ForEach(viewModel.nationalities, id: \.self) {
                     Text($0.name)
                 }
