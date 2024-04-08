@@ -43,7 +43,7 @@ struct ContentView: View {
             nationalities = [Nationality(
                 name: "Test",
                 platoons: [
-                    Platoon(rating: 0, training: .regular, squads: [
+                    Platoon(name: "Rifle", rating: 0, training: .regular, squads: [
                         Squad(leader: leader1, teams: [Team(supportWeapon: nil, soldiers: [Soldier(weapons: [.rifle])], leader: nil)]),
                         Squad(leader: leader2, teams: [Team(supportWeapon: nil, soldiers: [Soldier(weapons: [.rifle])], leader: nil)])
                     ], hq: Headquarters(commander: leader, secondInCommand: nil, soldiers: nil, supportTeams: nil)
